@@ -11,8 +11,9 @@ local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 
 parser_config.oxi = {
   install_info = {
-    url = "<...>/tree-sitter-oxi", -- Absolute path to this directory
+    url = "https://github.com/oxilang/tree-sitter-oxi.git",
     files = { "src/parser.c" },
+    branch = "main",
     generate_requires_npm = false,
     requires_generate_from_grammar = false,
   },
@@ -24,6 +25,4 @@ vim.filetype.add({
     oxi = "oxi",
   },
 })
-
-vim.opt.runtimepath:append("<...>/tree-sitter-oxi") -- Absolute path to this directory
 ```
