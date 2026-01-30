@@ -74,3 +74,4 @@ yarn-error.log*
 index.node
 
 test*
+*.oxi

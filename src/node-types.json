@@ -275,6 +275,21 @@
     "fields": {}
   },
   {
+    "type": "break_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "call_expression",
     "named": true,
     "fields": {
@@ -361,6 +376,10 @@
         },
         {
           "type": "block",
+          "named": true
+        },
+        {
+          "type": "break_expression",
           "named": true
         },
         {
@@ -1684,6 +1703,10 @@
   },
   {
     "type": "as",
+    "named": false
+  },
+  {
+    "type": "break",
     "named": false
   },
   {

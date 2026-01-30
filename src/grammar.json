@@ -1145,6 +1145,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "break_expression"
+        },
+        {
+          "type": "SYMBOL",
           "name": "block"
         }
       ]
@@ -1832,6 +1836,27 @@
         }
       ]
     },
+    "break_expression": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "break"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "expression"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
     "block": {
       "type": "SEQ",
       "members": [
@@ -2208,6 +2233,21 @@
       "binary_expression",
       "unary_expression",
       "postfix_expression"
+    ],
+    [
+      "break_expression",
+      "binary_expression"
+    ],
+    [
+      "break_expression",
+      "assignment_expression"
+    ],
+    [
+      "break_expression",
+      "cast_expression"
+    ],
+    [
+      "break_expression"
     ]
   ],
   "precedences": [],

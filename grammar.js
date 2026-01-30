@@ -5,6 +5,10 @@ module.exports = grammar({
 
   conflicts: ($) => [
     [$.binary_expression, $.unary_expression, $.postfix_expression],
+    [$.break_expression, $.binary_expression],
+    [$.break_expression, $.assignment_expression],
+    [$.break_expression, $.cast_expression],
+    [$.break_expression],
   ],
 
   rules: {
@@ -186,6 +190,7 @@ module.exports = grammar({
         $.if_expression,
         $.while_expression,
         $.loop_expression,
+        $.break_expression,
         $.block,
       ),
 
@@ -301,6 +306,8 @@ module.exports = grammar({
       seq("while", field("condition", $.expression), field("body", $.block)),
 
     loop_expression: ($) => seq("loop", $.block),
+
+    break_expression: ($) => seq("break", optional($.expression)),
 
     block: ($) => seq("{", repeat($._statement), "}"),
 

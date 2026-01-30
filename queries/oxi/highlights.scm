@@ -12,6 +12,7 @@
 "else" @keyword.conditional
 "while" @keyword.repeat
 "loop" @keyword.repeat
+"break" @keyword.repeat
 "as" @keyword.operator
 "pub" @keyword.modifier
 "extern" @keyword.modifier
